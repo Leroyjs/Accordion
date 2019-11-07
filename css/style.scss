@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,500&display=swap&subset=cyrillic');
+
+$bg-nav1: #e7e7e7;
+$bg-nav2: #696666;
+$bg-nav-active: #ff8663;
+
+body{
+	font-family: 'Fira Sans', sans-serif;
+}
+.wrapper{
+	margin: 0 auto;
+	max-width: 459px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;	
+	align-items: center;
+}
+nav{
+	width: 100%;	
+}
+ul{
+	list-style-type: none;	
+	padding-left: 0;
+	margin-left: 0;
+}
+.nav{	
+	position: relative;
+	z-index: 1; 
+	font-size: 15px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;	
+	justify-content: space-between;	
+	height: 42px;
+	background-color: $bg-nav1;
+	border-radius: 21px;
+	padding-right: 21px;
+	padding-left: 20px;
+	align-items: center;
+	margin-bottom: 5px;
+	cursor: pointer;
+	transition: 0.2s;
+}
+.nav-link-1{
+	background-color: $bg-nav1;
+	color: #4f4f4f;
+}
+.nav-link-2{
+	background-color: $bg-nav2;
+	color:#fff;
+}
+
+.nav-link-2:hover, .nav-link-1:hover{
+	background-color: $bg-nav-active;
+	color: #fff;
+}
+.nav-link-2:hover .arrow, .nav-link-1:hover .arrow{
+	border-top-color: #fff;
+}
+.nav-active{
+	background-color: $bg-nav-active;
+	color: #fff;
+}
+.logo-box{
+	margin-bottom: 23px;
+}
+.arrow{
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 12px solid $bg-nav-active;
+    transition: 0.2s;
+}
+.arrow-active{
+	border-top-color: #fff;
+	transform: rotate(180deg);
+}
+.submenu{
+	height: 0;
+	transform:scaleY(0);
+	margin-top: -26px;
+	margin-bottom: 26px;
+	transform-origin: top;
+	transition: 0.4s;
+	&-active{
+		position: relative;
+		z-index: 0;
+		margin-bottom: 0;
+		height: 77px;
+		padding-top: 35px;
+		padding-left: 20px;
+		padding-bottom: 12px;
+		border-bottom-left-radius: 21px;
+		border-bottom-right-radius: 21px;
+		font-family: "Fira Sans";
+		font-size: 15px;
+		font-weight: 300;
+		line-height: 26px;
+		margin-bottom: 5px;
+		transform:scaleY(1);
+		background-color: $bg-nav1;
+	}
+	li{
+		cursor: pointer;
+	}
+	li:hover{
+		text-decoration: underline;
+	}
+}
